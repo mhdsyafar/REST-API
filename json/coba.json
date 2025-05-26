@@ -1,0 +1,43 @@
+[
+    {
+        "nama" : "Muhammad syafar",
+        "umur" : 23,
+        "nim" : "2217020125",
+        "lulus" : true,
+        "hobby" : [
+            "voli"
+        ],
+        "pembimbing" : {
+            "pembimbing 1" : "Yaslinda lizar",
+            "pembimbing 2" : "Novia lestari"
+        }
+    },
+    {
+        "nama" : "M.pazrel",
+        "umur" : 21,
+        "nim" : "2617001011",
+        "lulus" : false,
+        "hobby" : [
+            "hiking"
+        ],
+        "pembimbing" : {
+            "pembimbing 1" : "Infandi",
+            "pembimbing 2" : "zikra"
+        }
+    },
+    {
+        "nama" : "Aisyah putri bungsu",
+        "umur" : 19,
+        "nim" : "2917020200",
+        "lulus" : false,
+        "hobby" : [
+            "voli",
+            "brenang",
+            "joging"
+        ],
+        "pembimbing" : {
+            "pembimbing 1" : "M.zain",
+            "pembimbing 2" : "Maisita"
+        }
+    }
+]
