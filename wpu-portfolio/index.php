@@ -69,6 +69,7 @@ $latestVideoId = $result['items'][0]['id']['videoId'];
           <img src="img/profile1.png" class="rounded-circle img-thumbnail">
           <h1 class="display-4">muhammad syafar</h1>
           <h3 class="lead">Lecturer | Programmer | Youtuber</h3>
+
         </div>
       </div>
     </div>
