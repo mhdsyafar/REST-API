@@ -58,6 +58,23 @@ class CI_Loader {
 	 * @var	int
 	 */
 	protected $_ci_ob_level;
+	public $benchmark;
+	public $hooks;
+	public $config;
+	public $log;
+	public $utf8;
+	public $uri;
+	public $router;
+	public $output;
+	public $security;
+	public $input;
+	public $lang;
+	public $load;
+	public $db;
+	public $session;
+	public $Mahasiswa_model;
+	public $form_validation;
+
 
 	/**
 	 * List of paths to load views from

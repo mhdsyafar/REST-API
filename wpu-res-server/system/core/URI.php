@@ -58,6 +58,8 @@ class CI_URI {
 	 */
 	public $keyval = array();
 
+	public $config;
+
 	/**
 	 * Current URI string
 	 *

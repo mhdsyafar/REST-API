@@ -59,12 +59,29 @@ class CI_Controller {
 	 */
 	private static $instance;
 
+
 	/**
 	 * CI_Loader
 	 *
 	 * @var	CI_Loader
 	 */
+	public $benchmark;
+	public $hooks;
+	public $config;
+	public $log;
+	public $utf8;
+	public $uri;
+	public $router;
+	public $output;
+	public $security;
+	public $input;
+	public $lang;
 	public $load;
+	public $db;
+	public $session;
+	public $Mahasiswa_model;
+	public $form_validation;
+
 
 	/**
 	 * Class constructor

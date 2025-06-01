@@ -18,7 +18,7 @@
 //     ]
 // ];
 
-$dbh = new PDO('mysql:host=localhost; dbname=phpdasar', 'root', 
+$dbh = new PDO('mysql:host=localhost; dbname=wpu_rest', 'root', 
 ''); 
 $db = $dbh->prepare('SELECT * FROM mahasiswa'); 
 $db->execute(); 
