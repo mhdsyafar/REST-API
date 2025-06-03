@@ -1,4 +1,31 @@
 
+<?php
+function get_Curl($url)
+{
+  $curl = curl_init();
+  curl_setopt($curl, CURLOPT_URL, $url);
+  curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+  $result = curl_exec($curl);
+  curl_close($curl);
+
+  return json_decode($result, true);
+}
+
+$apiKey = "AIzaSyCVK6JmPgF0ZMkvRxMK6hv_cw8QaWJVNcQ";
+$channelId = "UCHHEvstRQ8Kss3l4jCFg6cA";
+
+$channelInfoUrl = "https://www.googleapis.com/youtube/v3/channels?part=snippet,statistics&id=$channelId&key=$apiKey";
+$result = get_Curl($channelInfoUrl);
+
+$youtubeProfilePic = $result['items'][0]['snippet']['thumbnails']['default']['url'];
+$channelName = $result['items'][0]['snippet']['title'];
+$subscriber = $result['items'][0]['statistics']['subscriberCount'];
+
+$urlLatestVideo = "https://www.googleapis.com/youtube/v3/search?key=$apiKey&channelId=$channelId&maxResults=1&order=date&part=snippet";
+$result = get_Curl($urlLatestVideo);
+$latestVideoId = $result['items'][0]['id']['videoId'];
+?>
+
 
     <div class="jumbotron" id="home">
       <div class="container">
@@ -9,6 +36,40 @@
         </div>
       </div>
     </div>
+
+    <!-- Youtube Section -->
+<section class="social" id="social">
+  <div class="container">
+    <div class="row pt-4 mb-4">
+      <div class="col text-center">
+        <h2>Youtube Channel</h2>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-4">
+            <img src="<?= $youtubeProfilePic; ?>" width="200" class="rounded-circle img-thumbnail">
+          </div>
+          <div class="col-md-8">
+            <h5><?= $channelName; ?></h5>
+            <p><?= $subscriber ?> Subscribers</p>
+            <div class="g-ytsubscribe" data-channelid="<?= $channelId; ?>" data-layout="default" data-count="default"></div>
+          </div>
+        </div>
+        <div class="row mt-3 pb-3">
+          <div class="col">
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/<?= $latestVideoId; ?>" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
     <!-- Portfolio -->
     <section class="portfolio" id="portfolio">
@@ -133,3 +194,5 @@
         </div>
       </div>
     </section>
+
+    <script src="https://apis.google.com/js/platform.js"></script>
